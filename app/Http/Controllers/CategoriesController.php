@@ -54,15 +54,7 @@ class CategoriesController extends Controller
            'category_name' => 'required',
         ])->validate();
       
-        /*
-        $validator = Validator::make($request->all(), [ 
-            'category_name' => 'required',
-          
-        ]);
-      
-        if ($validator->fails()) {
-            return json_encode($validator->errors());
-        } */
+       
       
         $category = new Category;
         
