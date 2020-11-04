@@ -12,5 +12,5 @@ For the frontend mainly Vue js has been used each page consists of one or more V
 
 
 ----------------------------------------------------------------
-For the creation of the post content Froala editor has been integrated to our project you can find out more about this editor here ->> https://froala.com/wysiwyg-editor/
+For the creation of the post content Froala editor has been integrated to our project you.. can find out more about this editor here ->> https://froala.com/wysiwyg-editor/
 
