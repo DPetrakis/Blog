@@ -27,8 +27,11 @@
   </div>
   <div class="form-row mt-4">
    <div class="form-group col-md-6">
-      <label for="exampleFormControlSelect1">Select tags</label>
-      <select class="form-control" v-model="post.tag_id" >
+      <label for="exampleFormControlSelect1">Selected tags</label>
+         <ejs-multiselect v-model = selectedvalues  :allowCustomValue='allowCustomValue'   id='multiselect' :dataSource='tags' :fields='fields' placeholder="Select tags"></ejs-multiselect>
+     
+     
+    <!-- <select class="form-control" v-model="post.tag_id" >
        <option v-for="tag in tags" v-bind:key="tag.id" v-bind:value="tag.id">{{tag.name}}</option>
       </select>
       <div v-if="errors.tag_id" class="alert alert-danger mt-3" role="alert">
@@ -36,15 +39,10 @@
       </div>
       <div v-if="errors.tags" class="alert alert-danger mt-3" role="alert">
          {{errors.tags[0]}}
-      </div>
+      </div> -->
   
 
-<!-- <select class="form-control" v-model="post.tag_id" >
-       <option v-for="tag in tags" v-bind:key="tag.id" v-bind:value="tag.id">{{tag.name}}</option>
-      </select>
-      <div v-if="errors.tag_id" class="alert alert-danger mt-3" role="alert">
-         {{errors.tag_id[0]}}
-      </div> -->
+    
     </div>
     <div class="form-group col-md-6">
       <label for="exampleFormControlSelect1">Breaking news?</label>
@@ -86,20 +84,25 @@ export default {
             categories: [],
             //tags for select options
             tags: [],
-           
+            fields : { text: 'name', value: 'id' },
+            allowCustomValue : true,
             post: {
                 title: "",
                 description: "",
                 category_id: "",
                 image: null,
-                tag_id: "",
+                tags: [],
                 breaking_news: ""
                
             },
             admin: window.Laravel.admin,
             api_token: window.Laravel.api_token,
             errors:[],
-            messsage: ""
+            message: "",
+            //In this array we will store the values for multiselect 
+            selectedvalues: [],
+           
+            
         }
     },
     mounted(){
@@ -122,13 +125,14 @@ export default {
              this.post.title = response.data.data.title;
              this.post.description = response.data.data.description;
              this.post.category_id = response.data.data.category.id;
-          //   this.tags = response.data.data.tags;
-             this.post.tag_id = response.data.data.tags[0].id;
+             this.post.tags = response.data.data.tags;
+             this.CreateMultiValue(this.post.tags);
+           //  this.post.tag_id = response.data.data.tags[0].id;
              this.post.breaking_news = response.data.data.breaking_news;
              this.post.image = response.data.data.image;
             
              editor.html.set(this.post.description);
-             
+            
           
             }, (error) => {
                 console.log(error);
@@ -166,7 +170,7 @@ export default {
 
         },
         EditPost: function(){
-            
+           
              var editor = new FroalaEditor('#editor');
              this.post.description = editor.html.get();
              
@@ -177,7 +181,7 @@ export default {
              data.append('image',this.post.image);
              data.append('category_id',this.post.category_id);
              data.append('admin_id',this.admin.id);
-             data.append('tag_id',this.post.tag_id);
+             data.append('tags',JSON.stringify(this.selectedvalues));
              data.append('breaking_news',this.post.breaking_news);
 
              //Set headers
@@ -199,6 +203,7 @@ export default {
                   this.post.category_id = "";
                   this.post.tag_id = "";
                   this.post.breaking_news = "";
+                  this.selectedvalues = "";
                   editor.html.set('');
                   this.message = "This post has been edited";
                }).catch((error) =>{
@@ -210,6 +215,15 @@ export default {
 
 
         },
+
+      /*  This method creates the array for the multiselect value,
+        we couldnt use post.tags cause they where fetched as an object thats
+        why we need this method */
+        CreateMultiValue: function(tags){
+            tags.forEach(element => {
+              this.selectedvalues.push(element.id);
+            });
+        } 
 
     }
 }

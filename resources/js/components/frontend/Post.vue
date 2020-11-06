@@ -11,7 +11,7 @@
                     </div>
                   <div class="down-content">
                       <span>{{post.category.name}}</span>
-                      <a href="post-details.html"><h4>{{post.title}}</h4></a>
+                      <a href="#"><h4>{{post.title}}</h4></a>
                       <ul class="post-info">
                          <li><a href="#" class="author-name">By {{post.author.name}}</a></li> 
                          <li><a href="#">{{post.created_at}}</a></li>

@@ -175,7 +175,7 @@ class PostsController extends Controller
             'category_id' => 'required',
             'image' => 'required',
             'breaking_news' => 'required',
-            'tag_id' => 'required'
+            'tags' => 'required'
 
         ])->validate();
 
@@ -198,9 +198,18 @@ class PostsController extends Controller
             $post->breaking_news = $request->get('breaking_news');
         
         if($post->save()){
+           
+            $tags = json_decode($request->get('tags'));
             
-            $post->tags()->attach($request->get('tag_id'));
-                
+            /*Add only the tags that are not already attached to this post 
+            We dont want duplicated results */
+            foreach($tags as $tag){
+                $hasTag = $post->tags()->where('tag_id', $tag)->exists();
+                if(!$hasTag){
+                    $post->tags()->attach($tag);
+                }
+            }
+      
             return new PostResource($post);
         }       
     }
