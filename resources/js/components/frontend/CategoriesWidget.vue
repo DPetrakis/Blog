@@ -28,19 +28,21 @@ export default {
 
     mounted(){
          
-         axios({
+      this.FetchCategories();
+    },
+    methods: {
+      FetchCategories: function(){
+        axios({
           method: 'get',
           url:  '/Performance/public/api/categories'
-          
         })
         .then((response) => {
-            
-           
             this.categories = response.data.data;
           
          }, (error) => {
             console.log(error);
         });
+      }
     },
     computed: {
       url: function(){

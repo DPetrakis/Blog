@@ -125,7 +125,7 @@ class PostsController extends Controller
         
         if($post->save()){
             
-         //   $post->tags()->attach($request->get('tag_id'));
+  
             $tags = json_decode($request->get('tags'));
          
             $post->tags()->attach($tags);
