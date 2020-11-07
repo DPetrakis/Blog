@@ -1116,8 +1116,61 @@ footer p a:hover {
 	.month-space {
 		height: 200px;
 	}
+
+	.tag-space {
+		height: 200px;
+	}
 	
 }
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+	.home-space {
+		height: 200px;
+	}
+
+	.post-space {
+		height: 200px;
+	}
+
+	.category-space {
+		height: 200px;
+	}
+
+	.month-space {
+		height: 200px;
+	}
+
+	.tag-space {
+		height: 50px;
+	}
+	
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+	.home-space {
+		height: 50px;
+	}
+
+	.post-space {
+		height: 50px;
+	}
+
+	.category-space {
+		height: 50px;
+	}
+
+	.month-space {
+		height: 50px;
+	}
+
+	.tag-space {
+		height: 50px;
+	}
+	
+  }
+  
 
 
 /* 
@@ -1148,5 +1201,38 @@ footer p a:hover {
     	letter-spacing: 0.25px;
     }
 
+	.tag-space {
+		height: 50px;
+	}
   
 }
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+	.home-space {
+		height: 50px;
+	}
+ 
+	.post-space {
+		height: 50px;
+	}
+ 
+	.category-space {
+		height: 50px;
+	}
+ 
+	.month-space {
+		height: 50px;
+	}
+
+	.tag-space {
+		height: 50px;
+	}
+ 
+	.blog-posts .down-content h4 {
+		 font-size: 17px;
+		 letter-spacing: 0.25px;
+	 }
+	
+	
+  }

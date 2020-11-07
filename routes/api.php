@@ -36,6 +36,8 @@ Route::get('/posts-per-month','PostsController@getcountbymonth');
 
 Route::get('/posts/months/{id}','PostsController@getbymonth');
 
+Route::get('/posts/tags/{id}','TagsController@getpostsbytag');
+
 
 
 //Breaking news routers

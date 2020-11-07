@@ -73,13 +73,13 @@ Vue.component('edit-tag',require('./components/admin/EditTag.vue').default);
 
 Vue.component('create-user',require('./components/admin/CreateUser.vue').default);
 
-
 Vue.component('dropdown',require('./components/frontend/DropDown.vue').default);
 
 Vue.component('calendar',require('./components/frontend/Calendar.vue').default);
 
-
 Vue.component('month',require('./components/frontend/Month.vue').default);
+
+Vue.component('tag',require('./components/frontend/Tag.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

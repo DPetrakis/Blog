@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tag;
 use App\Http\Resources\Tag as TagResource;
+use App\Http\Resources\Post as PostResource;
 
 class TagsController extends Controller
 {
@@ -21,6 +22,22 @@ class TagsController extends Controller
         $tags = Tag::orderBy('created_at', 'desc')->paginate(5);
 
         return TagResource::collection($tags);
+    }
+
+    public function getpostsbytag($id){
+
+        $tag = Tag::find($id);
+        
+        $posts = $tag->posts;
+
+        return PostResource::collection($posts);
+     
+    }
+
+    public function returntagpage($tag){
+        
+        return view('frontend/tag')->with('tag',$tag);
+        
     }
 
     /**

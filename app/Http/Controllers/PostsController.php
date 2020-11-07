@@ -37,6 +37,7 @@ class PostsController extends Controller
       
     }
 
+   
   
      
     //Return all breaking news

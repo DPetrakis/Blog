@@ -48,7 +48,7 @@
                     <div class="sidebar-heading">
                       <h2>Tag Clouds</h2>
                     </div>
-                    <tags-widget></tags-widget>
+                    <tags-widget page = "index"></tags-widget>
                   </div>
                 </div>
                 <div class="col-lg-12">

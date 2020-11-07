@@ -35,6 +35,8 @@ Route::get('/postsbymonth/{id}','PostsController@getbymonth');
 
 Route::get('/months/{month}','PostsController@returnmonthpage');
 
+Route::get('/tags/{tag}','TagsController@returntagpage');
+
 Route::prefix('admin')->group(function(){
  
     Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');

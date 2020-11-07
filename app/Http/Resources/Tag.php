@@ -19,7 +19,8 @@ class Tag extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'created_at' => $this->created_at->format('d/m/Y'),
-            'updated_at' => $this->updated_at
+            'updated_at' => $this->updated_at,
+            'posts' => $this->posts
             
         ];
     }
