@@ -33,6 +33,10 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
 
+.show-more:hover {
+	color: #fff;
+}
+
 .main-button a {
 	display: inline-block;
 	background-color: #f48840;
@@ -1090,4 +1094,59 @@ footer p a:hover {
 		margin-left: 0px;
 		margin-top: 60px;
 	}
+
+	
+}
+
+
+@media (min-width: 1281px) {
+  
+	.home-space {
+		height: 200px;
+	}
+
+	.post-space {
+		height: 200px;
+	}
+
+	.category-space {
+		height: 200px;
+	}
+
+	.month-space {
+		height: 200px;
+	}
+	
+}
+
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479pxs
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+   .home-space {
+	   height: 50px;
+   }
+
+   .post-space {
+	   height: 50px;
+   }
+
+   .category-space {
+	   height: 50px;
+   }
+
+   .month-space {
+	   height: 50px;
+   }
+
+   .blog-posts .down-content h4 {
+    	font-size: 17px;
+    	letter-spacing: 0.25px;
+    }
+
+  
 }

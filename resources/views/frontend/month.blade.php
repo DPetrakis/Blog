@@ -2,7 +2,7 @@
 
 @section('content')
    
-<div style="height:200px"></div>
+<div class = "month-space"></div>
   <!-- Page Content -->
  
   

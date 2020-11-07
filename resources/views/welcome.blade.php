@@ -2,8 +2,8 @@
 
 @section('content')
   
-  <div style="height:100px"></div>
-  
+ 
+  <div class = "home-space"></div>
   
   
   <!-- Page Content -->
