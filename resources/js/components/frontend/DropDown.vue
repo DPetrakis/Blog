@@ -1,6 +1,6 @@
 <template>
  <div v-if="categories.length">
-     <a v-for="category in categories" v-bind:key="category.id" class="nav-link" v-bind:href="'/Performance/public/categories/' + category.id">
+     <a class="nav-link" v-for="category in categories" v-bind:key="category.id"  v-bind:href="'/Performance/public/categories/' + category.id">
           {{category.name}}                      
      </a>
  </div>

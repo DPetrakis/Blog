@@ -20,7 +20,7 @@ export default {
     data(){
         return {
             tags: [],
-            tag_url: ""
+            tag_url: "../tags/"
         }
     },
     mounted(){
@@ -49,23 +49,23 @@ export default {
       url: function(){
         if(this.page == 'index'){
 
-          this.calendar_url = 'tags/';
-          return this.calendar_url;
+          this.tag_url = 'tags/';
+          return this.tag_url;
 
         }
         else if(this.page == 'post'){
 
-          this.calendar_url = '../tags/';
-          return this.calendar_url;
+          this.tag_url = '../tags/';
+          return this.tag_url;
 
         }
          else if(this.page == 'month'){
-          this.calendar_url = '../tags/';
-          return this.calendar_url;
+          this.tag_url = '../tags/';
+          return this.tag_url;
         }
         else {
 
-          return this.calendar_url;
+          return this.tag_url;
 
         }
       }

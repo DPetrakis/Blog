@@ -1232,7 +1232,19 @@ footer p a:hover {
 	.blog-posts .down-content h4 {
 		 font-size: 17px;
 		 letter-spacing: 0.25px;
-	 }
+	}
+
 	
 	
   }
+
+  .navbar .navbar-nav a.nav-link {
+	text-transform: capitalize;
+	font-size: 15px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #1e1e1e;
+	transition: all 0.3s;
+	text-align: center !important;
+}
