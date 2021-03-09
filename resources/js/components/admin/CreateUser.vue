@@ -71,7 +71,7 @@ export default {
         FetchRoles: function(){
           axios({
             method: 'get',
-            url:  '../api/roles/',
+            url:  '../api/roles',
             headers:{
                Authorization: 'Bearer ' + this.api_token
             },
