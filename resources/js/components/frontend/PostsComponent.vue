@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                   <div class="blog-post" v-for="post in posts" v-bind:key="post.id">
                     <div class="blog-thumb">
-                      <img class="posts-image" alt=""  :src="'/Performance/public/images/' + post.image">
+                      <img class="posts-image" alt=""  :src="'/images/' + post.image">
                     </div>
                     <div class="down-content">
                       <span>{{post.category.name}}</span>
@@ -77,7 +77,7 @@ export default {
     methods: {
       FetchPosts: function(page_url) {
            let vm = this;
-           page_url = page_url || '../public/api/posts'
+           page_url = page_url || '/api/posts'
            axios({
            method: 'get',
            url:  page_url

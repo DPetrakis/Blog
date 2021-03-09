@@ -31,7 +31,7 @@ export default {
         FetchTags:function(){
              axios({
                 method: 'get',
-                url:  '/Performance/public/api/tags'
+                url:  '/api/tags'
           
               })
               .then((response) => {

@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                   <div class="blog-post">
                     <div class="blog-thumb">
-                      <img  :src="'/Performance/public/images/' + post.image" alt="">
+                      <img  :src="'/images/' + post.image" alt="">
                     </div>
                   <div class="down-content">
                       <span>{{post.category.name}}</span>
@@ -146,7 +146,7 @@ export default {
 
           axios({
             method: 'post',
-            url:  '/Performance/public/api/comments',
+            url:  '/api/comments',
             headers: {
                     Authorization: 'Bearer ' + window.Laravel.api_token
             }, 

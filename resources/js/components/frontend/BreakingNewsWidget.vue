@@ -3,7 +3,7 @@
         <ul>
             <li v-for="post in NewsToShow" v-bind:key="post.id"><a href="#">
             <a v-bind:href="url + post.id" ><h5>{{post.title}}</h5></a>
-             <img alt="" class="breaking-news-image"  :src="'/Performance/public/images/' + post.image"><br>
+             <img alt="" class="breaking-news-image"  :src="'/images/' + post.image"><br>
             <span>{{post.created_at}}</span>
             
             </a></li>
@@ -39,7 +39,7 @@ export default {
         FetchBreakingNews(){
                axios({
                     method: 'get',
-                    url:  '/Performance/public/api/breaking-news'
+                    url:  '/api/breaking-news'
           
                 })
                 .then((response) => {

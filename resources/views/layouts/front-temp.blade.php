@@ -15,7 +15,7 @@
 <title>{{ config('app.name', 'Laravel') }}</title>
 
 <!-- Bootstrap core CSS -->
-<link href="\Performance\public\css\front-css\bootstrap.min.css" rel="stylesheet">
+<link href="\css\front-css\bootstrap.min.css" rel="stylesheet">
 <script>
      window.Laravel = 
      <?php
@@ -32,8 +32,8 @@
     
 <!-- Additional CSS Files 
 <link rel="stylesheet" href="\Performance\public\css\front-css\fontawesome.css"> -->
-<link rel="stylesheet" href="\Performance\public\css\front-css\templatemo-stand-blog.css">
-<link rel="stylesheet" href="\Performance\public\css\front-css\owl.css">
+<link rel="stylesheet" href="\css\front-css\templatemo-stand-blog.css">
+<link rel="stylesheet" href="\css\front-css\owl.css">
 <!--
 
 TemplateMo 551 Stand Blog
@@ -145,14 +145,14 @@ https://templatemo.com/tm-551-stand-blog
     </div>
      
    <!-- <script src="\Performance\public\js\front-js\jquery.min.js"></script> -->
-    <script src="\Performance\public\js\front-js\bootstrap.bundle.min.js"></script>  
+    <script src="\js\front-js\bootstrap.bundle.min.js"></script>  
 
     <!-- Additional Scripts -->
-    <script src="\Performance\public\js\front-js\custom.js"></script>
-    <script src="\Performance\public\js\front-js\owl.js"></script>
-    <script src="\Performance\public\js\front-js\slick.js"></script>
-    <script src="\Performance\public\js\front-js\isotope.js"></script>
-    <script src="\Performance\public\js\front-js\accordions.js"></script> 
+    <script src="\js\front-js\custom.js"></script>
+    <script src="\js\front-js\owl.js"></script>
+    <script src="\js\front-js\slick.js"></script>
+    <script src="\js\front-js\isotope.js"></script>
+    <script src="\js\front-js\accordions.js"></script> 
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field

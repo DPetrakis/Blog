@@ -58,7 +58,7 @@
   </div>
    
   <div class="blog-thumb mt-4" v-if="post.image">
-      <img class="edit-image" alt=""  :src="'/Performance/public/images/' + post.image">
+      <img class="edit-image" alt=""  :src="'/images/' + post.image">
   </div>  
 
   <div class="form-group mt-4">
@@ -117,7 +117,7 @@ export default {
            var editor = new FroalaEditor('#editor');
            axios({
             method: 'get',
-            url:  '/Performance/public/api/posts/' + this.post_id
+            url:  '/api/posts/' + this.post_id
           
             })
            .then((response) => {
@@ -141,7 +141,7 @@ export default {
          FetchCategories: function() {
               axios({
                 method: 'get',
-                url:  "/Performance/public/api/categories"
+                url:  "/api/categories"
                })
               .then((response) => {
                      this.categories = response.data.data;
@@ -153,7 +153,7 @@ export default {
         FetchTags: function(){
             axios({
                 method: 'get',
-                url:  "/Performance/public/api/tags"
+                url:  "/api/tags"
             })
             .then((response) => {
               this.tags = response.data.data;
@@ -192,7 +192,7 @@ export default {
               };
 
               
-               axios.post('/Performance/public/api/posts/' + this.post_id,data,axiosConfig)
+               axios.post('/api/posts/' + this.post_id,data,axiosConfig)
                .then((response) => {
                   this.$emit('getpost',{'post': "Post created"});
 

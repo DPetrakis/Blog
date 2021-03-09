@@ -1,6 +1,6 @@
 <template>
  <div v-if="categories.length">
-     <a class="nav-link" v-for="category in categories" v-bind:key="category.id"  v-bind:href="'/Performance/public/categories/' + category.id">
+     <a class="nav-link" v-for="category in categories" v-bind:key="category.id"  v-bind:href="'/categories/' + category.id">
           {{category.name}}                      
      </a>
  </div>
@@ -21,7 +21,7 @@ export default {
         FetchCategories: function(){
              axios({
                  method: 'get',
-                 url:  '/Performance/public/api/categories'
+                 url:  '/api/categories'
              })
              .then((response) => {
                 this.categories = response.data.data;

@@ -6,7 +6,7 @@
             <div class="col-lg-12">
               <div class="blog-post" v-for="post in posts" v-bind:key="post.id">
                  <div class="blog-thumb">
-                      <img alt=""  :src="'/Performance/public/images/' + post.image">
+                      <img alt=""  :src="'/images/' + post.image">
                   </div>
                   <div class="down-content">
                       <span>{{post.category.name}}</span>

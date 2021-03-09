@@ -31,7 +31,7 @@ export default {
         FetchPostsByMonth: function(){
           axios({
             method: 'get',
-            url:  '/Performance/public/api/posts-per-month'
+            url:  '/api/posts-per-month'
           
            })
            .then((response) => {

@@ -34,7 +34,7 @@ export default {
       FetchCategories: function(){
         axios({
           method: 'get',
-          url:  '/Performance/public/api/categories'
+          url:  '/api/categories'
         })
         .then((response) => {
             this.categories = response.data.data;
