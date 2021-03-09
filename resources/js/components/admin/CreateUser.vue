@@ -88,7 +88,7 @@ export default {
         CreateUser: function(){
              axios({
                 method: 'post',
-                url:  "/Performance/public/api/admins",
+                url:  "/api/admins",
                 headers: {
                     Authorization: 'Bearer ' + this.api_token,
                  
