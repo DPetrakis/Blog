@@ -25,8 +25,8 @@
   </div>
 
   <label for="exampleFormControlTextarea1">Content</label>
-  <div id="editor">
-  </div>
+ <!--<div id="editor">
+  </div> -->
   <div v-if="errors.description" class="alert alert-danger mt-3" role="alert">
      {{errors.description[0]}}
   </div>
@@ -155,7 +155,7 @@ export default {
              data.append('category_id',this.post.category_id);
              data.append('admin_id',this.admin.id);
              data.append('tags',JSON.stringify(this.selectdata));
-           //  data.append('tag_id',this.post.tag_id);
+            //data.append('tag_id',this.post.tag_id);
              data.append('breaking_news',this.post.breaking_news);
 
              //Set headers
