@@ -39,7 +39,9 @@ class RoleNew extends Command
     public function handle()
     {
         return Role::create([
+            
             'title' =>  $this->ask('Role Title:'),
+        
         ]);
     }
 }
