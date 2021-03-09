@@ -106,7 +106,7 @@ export default {
     },
 
     mounted(){
-        var editor = new FroalaEditor('#editor');
+      //  var editor = new FroalaEditor('#editor');
         this.FetchCategories();
         this.FetchTags();
     },
@@ -144,9 +144,9 @@ export default {
              
              console.log(this.selectdata);
            
-             var editor = new FroalaEditor('#editor');
-             this.post.description = editor.html.get();
-         
+            //var editor = new FroalaEditor('#editor');
+            //this.post.description = editor.html.get();
+            this.post.description = "asddasdsaasdsad";
              //Set data
              let data = new FormData();
              data.append('title', this.post.title);
