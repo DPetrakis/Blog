@@ -52,10 +52,10 @@ export default {
             roles: [],
             api_token: window.Laravel.api_token,
             user: {
-                username: "",
-                email: "",
-                password: "",
-                role_id: ""
+              username: "",
+              email: "",
+              password: "",
+              role_id: ""
             },
 
             admin: window.Laravel.admin
@@ -64,7 +64,6 @@ export default {
 
     mounted(){
         this.FetchRoles();
-
     },
 
     methods: {

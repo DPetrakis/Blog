@@ -93,7 +93,7 @@ export default {
                 title: "",
                 description: "",
                 category_id: "",
-                image: null,
+                image: "",
                 tag_id: "",
                 breaking_news: ""
                

@@ -100,7 +100,7 @@ class PostsController extends Controller
             'title' => 'required',
             'description' => 'required',
             'category_id' => 'required',
-            'image' => 'required',
+            'image' => 'nullable|sometimes|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'breaking_news' => 'required',
             'tags' => 'required'
 
