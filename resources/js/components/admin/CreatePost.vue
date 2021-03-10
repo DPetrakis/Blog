@@ -80,6 +80,7 @@ export default {
     
     data() {
         return {
+            
             selectdata: [],
             display: 'none',
             //store validation errors
@@ -166,7 +167,7 @@ export default {
               };
 
               
-              axios.post('../api/posts',data,axiosConfig)
+              axios.post('/api/posts',data,axiosConfig)
                .then((response) => {
                   this.$emit('getpost',{'post': "Post created"});
 
