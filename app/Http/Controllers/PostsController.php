@@ -100,7 +100,7 @@ class PostsController extends Controller
             'title' => 'required',
             'description' => 'required',
             'category_id' => 'required',
-        //  'image' => 'nullable|sometimes|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|sometimes|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'breaking_news' => 'required',
             'tags' => 'required'
 
@@ -114,14 +114,14 @@ class PostsController extends Controller
         $post->category_id = $request->get('category_id');
         $post->admin_id = $request->get('admin_id');
       
-        /*  if(request()->file('image')) {
+        if(request()->file('image')) {
             $image = request()->file('image');
             $imageName = $image->getClientOriginalName();
             $imageName = time() .'_'. $imageName; 
             $image->move(public_path('/images'),$imageName);
 
             $post->image = '/' . $imageName;
-        } */
+        }
         
         $post->breaking_news = $request->get('breaking_news');
         
