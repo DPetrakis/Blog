@@ -20,8 +20,8 @@
   </div>
 
   <label for="exampleFormControlTextarea1">Content</label>
-  <div id="editor">
-  </div>
+  <!--<div id="editor">
+  </div>-->
   <div v-if="errors.description" class="alert alert-danger mt-3" role="alert">
      {{errors.description[0]}}
   </div>
@@ -114,7 +114,7 @@ export default {
     },
     methods: {
         FetchPost: function(){
-           var editor = new FroalaEditor('#editor');
+          // var editor = new FroalaEditor('#editor');
            axios({
             method: 'get',
             url:  '/api/posts/' + this.post_id
@@ -171,7 +171,7 @@ export default {
         },
         EditPost: function(){
            
-             var editor = new FroalaEditor('#editor');
+            // var editor = new FroalaEditor('#editor');
              this.post.description = editor.html.get();
              
              //Set data
