@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 
-    
+    protected $fillable = [
+        'title', 'description', 'category_id','admin_id','breaking_news','image'
+    ];
 
     
     //Get the category that this post belongs to 
