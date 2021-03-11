@@ -45,8 +45,8 @@ class PostNew extends Command
             'category_id' => $this->ask('Category id:'),
             'admin_id' => $this->ask('Admin Id:'),
             'breaking_news' => $this->ask('Breaking News:'),
-            'tags' => $this->ask('Tags:')
-
+            'tags' => $this->ask('Tags:'),
+        
         ]);
     }
 }
