@@ -25,8 +25,12 @@
   </div>
 
   <label for="exampleFormControlTextarea1">Content</label>
- <!--<div id="editor">
-  </div> -->
+  <!--
+    <div id="editor">
+    </div> 
+  -->
+  <textarea class="ckeditor form-control" id="editor" name="editor"></textarea>
+  
   <div v-if="errors.description" class="alert alert-danger mt-3" role="alert">
      {{errors.description[0]}}
   </div>
@@ -91,23 +95,24 @@ export default {
             tags: [],
             fields : { text: 'name', value: 'id' },
             post: {
-                title: "",
-                description: "",
-                category_id: "",
-                image: "",
-                tag_id: "",
-                breaking_news: ""
+              title: "",
+              description: "",
+              category_id: "",
+              image: "",
+              tag_id: "",
+              breaking_news: ""
                
             },
            
             admin: window.Laravel.admin,
             api_token: window.Laravel.api_token,
-            message: ""
+            message: "",
+         
         }
     },
 
     mounted(){
-      //  var editor = new FroalaEditor('#editor');
+        //var editor = new FroalaEditor('#editor');
         this.FetchCategories();
         this.FetchTags();
     },
@@ -143,11 +148,13 @@ export default {
 
         CreatePost: function(){
              
-             console.log(this.selectdata);
+            console.log(this.selectdata);
            
-            //var editor = new FroalaEditor('#editor');
-            //this.post.description = editor.html.get();
-            this.post.description = "asddasdsaasdsad";
+            
+             //var editor = new FroalaEditor('#editor');
+             //this.post.description = editor.html.get();
+             this.post.description = CKEDITOR.instances.editor.getData();
+             alert(this.post.description);
              //Set data
              let data = new FormData();
              data.append('title', this.post.title);
@@ -179,8 +186,9 @@ export default {
                   this.post.tag_id = "";
                   this.post.breaking_news = "";
                   this.selectdata = "";
-                  editor.html.set('');
-
+                  //editor.html.set('');
+                  CKEDITOR.instances.editor.setData('');
+    
                   this.message = "Post has been created";
 
                 }).catch((error) =>{
