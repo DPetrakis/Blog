@@ -19,7 +19,7 @@ export default {
     data() {
       return {
          posts: [],
-         calendar_url: '../months/'
+         calendar_url: '/months/'
       }
     },
 
@@ -31,7 +31,7 @@ export default {
         FetchPostsByMonth: function(){
           axios({
             method: 'get',
-            url:  '../api/posts-per-month'
+            url:  '/api/posts-per-month'
           })
           .then((response) => {
                 console.log(response);
