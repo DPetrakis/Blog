@@ -31,15 +31,14 @@ export default {
         FetchPostsByMonth: function(){
           axios({
             method: 'get',
-            url:  '/api/posts-per-month'
+            url:  '../api/posts-per-month'
+          })
+          .then((response) => {
+                console.log(response);
+                this.posts = response.data;
           
-           })
-           .then((response) => {
-              console.log(response);
-              this.posts = response.data;
-          
-            }, (error) => {
-            console.log(error);
+           }, (error) => {
+                console.log(error);
             });
         },
 
