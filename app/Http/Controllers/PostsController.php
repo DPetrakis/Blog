@@ -30,7 +30,7 @@ class PostsController extends Controller
     //Return all posts belonging to a specific category
     public function postsbycategory($id){
         
-       $posts = Post::where('category_id',5)->get();
+       $posts = Post::where('category_id',$id)->get();
 
        return PostResource::collection($posts);
        
