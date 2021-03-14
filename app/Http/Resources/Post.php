@@ -18,7 +18,7 @@ class Post extends JsonResource
             
             'id' => $this->id,
             'title' => $this->title,
-            'description' => $this->description,
+        /*  'description' => $this->description,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
             'breaking_news' => $this->breaking_news,
@@ -26,7 +26,8 @@ class Post extends JsonResource
             'image' => $this->image,
             'tags' => $this->tags,
             'comments' => $this->comments->load('user'),
-            'author' => $this->admin
+            'author' => $this->admin 
+        */
             
 
         ];
