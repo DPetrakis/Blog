@@ -61,7 +61,7 @@ class PostsController extends Controller
        /* $posts = Post::selectRaw('month(created_at) month,count(*) count')
              ->groupBy('month')->get(); */ 
         
-        $posts = DB::table('posts')->selectRaw('month(created_at) month,count(*) count')->groupBy('month')->get();
+        $posts = DB::table('posts')->select('month(created_at) month,count(*) count')->groupBy('month')->get();
             
         return json_encode($posts);
 
