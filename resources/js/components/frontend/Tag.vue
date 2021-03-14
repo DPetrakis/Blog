@@ -61,7 +61,6 @@ export default {
             url:   '../api/posts/tags/'  +  this.tag
           })
           .then((response) => {
-            
             console.log(response);
             this.posts = response.data.data;
           }, (error) => {

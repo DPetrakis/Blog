@@ -66,17 +66,16 @@ export default {
     },
 
     mounted() {
-        
-        axios({
+      axios({
           method: 'get',
-          url:  '/api/categories/' + this.category
-        })
-        .then((response) => {
-          console.log(response);
-          this.posts = response.data.data;
-        },(error) => {
+          url:  '../api/categories/' + this.category
+      })
+      .then((response) => {
+        console.log(response);
+        this.posts = response.data.data;
+      },(error) => {
           console.log(error);
-        });
+      });
     }
 }
 </script>
