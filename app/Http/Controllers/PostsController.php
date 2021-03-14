@@ -34,7 +34,6 @@ class PostsController extends Controller
 
        return PostResource::collection($posts);
        
-      
     }
 
    
