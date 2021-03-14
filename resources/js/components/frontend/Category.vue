@@ -64,12 +64,12 @@ export default {
             posts: []
         }
     },
-
+    
     mounted() {
          
-          axios({
+        axios({
           method: 'get',
-          url:  '../api/categories/' + this.category
+          url:  '/api/categories/' + this.category
           
         })
         .then((response) => {
