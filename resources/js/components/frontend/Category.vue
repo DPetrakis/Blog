@@ -67,8 +67,8 @@ export default {
 
     mounted() {
       axios({
-          method: 'get',
-          url:  '../api/categories/' + this.category
+        method: 'get',
+        url:  '../api/categories/' + this.category
       })
       .then((response) => {
         console.log(response);
