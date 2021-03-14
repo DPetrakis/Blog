@@ -59,10 +59,10 @@ class PostsController extends Controller
     public function getcountbymonth(){
         
 
-        $posts = Post::selectRaw('month(created_at) month,count(*) count')
-             ->groupBy('month')->get();
+        //$posts = Post::selectRaw('month(created_at) month,count(*) count')
+         //    ->groupBy('month')->get();
       
-        return json_encode($posts);
+        return json_encode("hi there");
 
     }
 

@@ -1,7 +1,7 @@
 <template>
 
 <div class="content">
-    <ul>
+    <ul v-if="posts">
         <li v-for="post in posts" v-bind:key="post.id">
         <a v-bind:href="url + post.month">{{Monthname(post.month)}}({{post.count}})</a>
         </li>
