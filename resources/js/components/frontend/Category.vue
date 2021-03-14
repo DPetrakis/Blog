@@ -64,21 +64,18 @@ export default {
             posts: []
         }
     },
-    
+
     mounted() {
-         
+        
         axios({
           method: 'get',
           url:  '/api/categories/' + this.category
-          
         })
         .then((response) => {
-            
-            console.log(response);
-            this.posts = response.data.data;
-          
-         }, (error) => {
-            console.log(error);
+          console.log(response);
+          this.posts = response.data.data;
+        },(error) => {
+          console.log(error);
         });
     }
 }
