@@ -165,11 +165,9 @@ export default {
 
     CreatePost: function () {
       console.log(this.selectdata);
-
       //var editor = new FroalaEditor('#editor');
       //this.post.description = editor.html.get();
       this.post.description = CKEDITOR.instances.editor.getData();
-      alert(this.post.description);
       //Set data
       let data = new FormData();
       data.append("title", this.post.title);
