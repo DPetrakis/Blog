@@ -117,9 +117,10 @@ class PostsController extends Controller
             $post->image = '/' . $imageName;
           
           }elseif(env('APP_ENV') != 'local'){
-              $extention = request()->file('image')->extension();
-              $mimeType = request()->file('image')->getMimeType();
-              $path = Storage::disk('do_spaces')->putFileAs('uploads',request()->file('image'),time() . '.' . $extention);
+            request()->file('image')->store(
+                'public',
+                'do_spaces'
+            );
           }
 
          
