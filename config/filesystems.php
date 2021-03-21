@@ -65,7 +65,7 @@ return [
         ],
 
 
-        'do_spaces' => [
+        'spaces' => [
             
             'driver' => 's3',
             'key' => env('DO_SPACES_KEY'),
