@@ -8,7 +8,7 @@ use App\Http\Resources\Post as PostResource;
 use App\Tag;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
@@ -107,12 +107,23 @@ class PostsController extends Controller
         $post->admin_id = $request->get('admin_id');
       
         if(request()->file('image')) {
+          
+          if(env('APP_ENV') == 'local'){
+             
             $image = request()->file('image');
             $imageName = $image->getClientOriginalName();
             $imageName = time() .'_'. $imageName; 
             $image->move(public_path('/images'),$imageName);
-
             $post->image = '/' . $imageName;
+          
+          }elseif(env('APP_ENV') != 'local'){
+              $extention = request()->file('image')->extension();
+              $mimeType = request()->file('image')->getMimeType();
+              $path = Storage::disk('do_spaces')->putFileAs('uploads',request()->file('image'),time() . '.' . $extention);
+          }
+
+         
+        
         }
         
         $post->breaking_news = $request->get('breaking_news');
@@ -181,12 +192,15 @@ class PostsController extends Controller
         $post->admin_id = $request->get('admin_id');
       
         if(request()->file('image')) {
+          if(env('APP_ENV') == 'local'){
+            
             $image = request()->file('image');
             $imageName = $image->getClientOriginalName();
             $imageName = time() .'_'. $imageName; 
             $image->move(public_path('/images'),$imageName);
-
             $post->image = '/' . $imageName;
+          
+           }
         }
             $post->breaking_news = $request->get('breaking_news');
         
