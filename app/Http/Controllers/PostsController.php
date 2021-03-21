@@ -118,7 +118,7 @@ class PostsController extends Controller
           
           }elseif(env('APP_ENV') != 'local'){
             
-            Storage::disk('spaces')->put('uploads', request()->file('image'), 'public');
+           
 
           }
 
