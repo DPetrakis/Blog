@@ -19,21 +19,14 @@ class PostsController extends Controller
      */
     public function index()
     {
-        
-        $posts = Post::orderBy('created_at', 'desc')->paginate(7);
-       
-        return PostResource::collection($posts);
-        
-       
+       $posts = Post::orderBy('created_at', 'desc')->paginate(7);
+       return PostResource::collection($posts);
     }
     
     //Return all posts belonging to a specific category
     public function postsbycategory($id){
         
-       //$posts = Post::where('category_id',$id)->get();
-       
-       $posts = Post::all();
-
+       $posts = Post::where('category_id',$id)->get();
        return PostResource::collection($posts);
        
     }
@@ -47,7 +40,6 @@ class PostsController extends Controller
         $posts = Post::where('breaking_news',true)->orderBy('created_at','desc')->get();
 
         return PostResource::collection($posts);
-
     }
 
 
