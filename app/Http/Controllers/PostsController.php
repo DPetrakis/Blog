@@ -118,11 +118,7 @@ class PostsController extends Controller
           
           }elseif(env('APP_ENV') != 'local'){
             
-            $image = request()->file('image');
-            $imageName = $image->getClientOriginalName();
-
-            $store = Storage::disk('spaces')->put('/performanceblog/uploads/images/' . $imageName,file_get_contents($request->file('image')->getRealPath()),
-            'public');
+            Storage::disk('spaces')->put('uploads', request()->file('image'), 'public');
 
           }
 
